@@ -143,7 +143,6 @@ df_top_regiao = df[['regiao', 'number']].groupby('regiao').sum().sort_values('nu
 df_top_year = df[['year', 'number']].groupby('year').sum().sort_values('number', ascending=False).reset_index()
 df_top_month = df[['month', 'number']].groupby('month', sort=False).sum().sort_values('number', ascending=False).reset_index()
 df_top_bioma = df[['bioma', 'number']].groupby('bioma', sort=False).sum().sort_values('number', ascending=False).reset_index()
-df_top_bioma
 
 
 
