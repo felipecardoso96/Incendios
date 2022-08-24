@@ -180,7 +180,7 @@ df_map = df_map.groupby(['codigo', 'state']).sum().sort_values('number').reset_i
 dfa = df.loc[(df['year'] <= intervalo[1]) & (df['year'] >= intervalo[0])]
 dfa = dfa.groupby('state').sum().sort_values('number').reset_index()
 figa = px.bar(dfa, x='number', y='state', color='number',width=800, height=550,
-              title='FOCOS DE INCÊNDIO POR ESTADO (1998 - 2017)',
+              title='FOCOS DE INCÊNDIO POR ESTADO',
               labels={
                   "number": " ",
                   "state": " ",
@@ -188,7 +188,7 @@ figa = px.bar(dfa, x='number', y='state', color='number',width=800, height=550,
 dfb = df.loc[(df['year'] <= intervalo[1]) & (df['year'] >= intervalo[0])]
 dfb = dfb.groupby('regiao').sum().sort_values('number').reset_index()
 figb = px.bar(dfb, 'number', 'regiao', color='number',
-              title='FOCOS DE INCÊNDIO POR REGIÃO (1998 - 2017)',
+              title='FOCOS DE INCÊNDIO POR REGIÃO',
               labels={
                   "number": " ",
                   "regiao": " ",
