@@ -217,7 +217,7 @@ fig_map = px.choropleth(df_map, geojson=state_geo, color="number",
                         labels={'number': 'Número de incêndios'},
                         )
 fig_map.update_geos(fitbounds="geojson", visible=False)
-fig_map.update_layout(title='FOCOS DE INCÊNDIO POR ESTADO (1998 - 2017)',
+fig_map.update_layout(title='FOCOS DE INCÊNDIO POR ESTADO',
                       height=500,
                       margin={"r": 0, "t": 40, "l": 0, "b": 0})
 st.plotly_chart(fig_map)
