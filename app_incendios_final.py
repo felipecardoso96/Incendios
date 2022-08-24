@@ -142,7 +142,8 @@ df_top_state = df[['state', 'number']].groupby('state').sum().sort_values('numbe
 df_top_regiao = df[['regiao', 'number']].groupby('regiao').sum().sort_values('number', ascending=False).reset_index()
 df_top_year = df[['year', 'number']].groupby('year').sum().sort_values('number', ascending=False).reset_index()
 df_top_month = df[['month', 'number']].groupby('month', sort=False).sum().sort_values('number', ascending=False).reset_index()
-
+df_top_bioma = df[['bioma', 'number']].groupby('bioma', sort=False).sum().sort_values('number', ascending=False).reset_index()
+df_top_bioma
 
 
 
@@ -378,6 +379,7 @@ with st.sidebar:
     estado_max = df_top_state.loc[0, 'state']
     ano_max = df_top_year.loc[0, 'year']
     month_max = df_top_month.loc[0, 'month']
+    bioma_max = df_top_bioma.loc[0, 'bioma']
 
     st.title('Panorama Geral')
 
@@ -389,4 +391,7 @@ with st.sidebar:
 
     st.subheader(" \U0001F5D3" "O mês com maior quantidade de incêndios é:")
     st.write(month_max)
+
+    st.subheader(" \U0001F333" "O bioma com maior quantidade de incêndios é:")
+    st.write(bioma_max)
 
